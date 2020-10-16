@@ -1,0 +1,21 @@
+import gmpy2
+from Crypto.Util.number import long_to_bytes,bytes_to_long
+
+n=76775333340223961139427050707840417811156978085146970312315886671546666259161
+p=273821108020968288372911424519201044333
+q=280385007186315115828483000867559983517
+e=65537
+N=(p-1)*(q-1)
+d=gmpy2.invert(e,N)
+
+f=open('fllllllag.txt','rb')
+ff=f.read()
+f.close()
+print(ff)
+c=bytes_to_long(ff)
+print(c)
+#c=64164714875121847926059111615452003561012242221020091779201676128584854984497
+m_long=pow(c,d,n)
+print(m_long)
+m=long_to_bytes(m_long)
+print(m)
